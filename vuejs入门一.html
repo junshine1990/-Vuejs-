@@ -7,8 +7,18 @@
     <title>vuejs入门之一</title>
 
     
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 
+    <style>
+        .canvas{
+            width: 300px;
+            height: 300px;
+            text-align: center;
+            line-height: 300px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+    </style>
 </head>
 <body >
     <!-- app 就是vue的根容器 -->
@@ -23,6 +33,16 @@
 
         <!-- 绑定HTML -->
         <p v-html="websiteTag"></p>
+
+        <!-- 事件Event -->
+        <p>年龄是: {{age}}</p>
+        <button v-on:click="add(1)">涨一岁</button>
+        <button v-on:click="substract(1)">减一岁</button>
+
+        <button v-on:dblclick="add(10)">涨十岁</button>
+        <button v-on:dblclick.once="substract(10)">减十岁</button>
+
+        <div class="canvas" v-on:mousemove="updateXY">({{x}},{{y}})</div>
     </div>
   
     <script src="app.js"></script> 

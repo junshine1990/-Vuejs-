@@ -3,6 +3,10 @@
 let app = new Vue({
     el: '#app',
     data: {
+        x: 0,
+        y: 0,
+
+        age: 30,
 
         message: 'Hello Junshine',
         job: 'Web开发!',
@@ -14,8 +18,17 @@ let app = new Vue({
         // this.data.job = this.job
         greet(msg){
             return `Good Junshine ${msg} 喜欢 ${this.job}`;
+        },
+        add(inc){
+            return this.age = this.age+inc;
+        },
+        substract(dec){
+            return this.age = this.age-dec;
+        },
+        updateXY(event){
+            this.x = event.offsetX;
+            this.y = event.offsetY;
         }
-        
     }
 
 })
@@ -31,3 +44,7 @@ let app = new Vue({
 //属性绑定 v-bind 将data中的数据绑定到标签中的某个属性中
 //  <a v-bind:href="website">junshine1990.github.io</a>
 //  <a :href="website">junshine1990.github.io</a>
+
+//监听事件 v-on:事件名 = 事件方法
+//  v-on:事件名 = “vue中的方法名(参数以及括号为可选)”
+// 事件 v-on:事件名 简写为 @事件名
