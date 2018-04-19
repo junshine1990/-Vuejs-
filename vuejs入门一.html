@@ -17,6 +17,12 @@
         <p>工作: {{job}}</p>
 
         <p>{{greet('参数')}}</p>
+
+        <!-- 属性绑定 -->
+        <a v-bind:href="website">junshine1990.github.io</a>
+
+        <!-- 绑定HTML -->
+        <p v-html="websiteTag"></p>
     </div>
   
     <script src="app.js"></script> 
