@@ -6,6 +6,8 @@ let app = new Vue({
         x: 0,
         y: 0,
 
+        msg: '',
+
         age: 30,
 
         message: 'Hello Junshine',
@@ -48,3 +50,7 @@ let app = new Vue({
 //监听事件 v-on:事件名 = 事件方法
 //  v-on:事件名 = “vue中的方法名(参数以及括号为可选)”
 // 事件 v-on:事件名 简写为 @事件名
+
+
+// 双向的数据绑定 一定与input 、textarea 、select 有关
+// v-model="dataName" dataName 是data数据中需要绑定的值
