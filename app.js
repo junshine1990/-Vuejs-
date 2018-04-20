@@ -1,8 +1,18 @@
 
 //实例化Vue对象
-let app = new Vue({
+let appOne = new Vue({
     el: '#app',
     data: {
+
+        persons: ['jjx','hjl','xjy','hhh'],
+        users:[
+            {name: 'jjx', age: 20},
+            {name: 'hjl', age: 21},
+            {name: 'xjy', age: 22},
+            {name: 'hhh', age: 23}
+        ],
+
+        show: false,
         x: 0,
         y: 0,
 
@@ -54,3 +64,27 @@ let app = new Vue({
 
 // 双向的数据绑定 一定与input 、textarea 、select 有关
 // v-model="dataName" dataName 是data数据中需要绑定的值
+
+// 指令v-if：
+// 指令v-for：可以循环数组，也可以循环对象
+
+let appTwo = new Vue({
+    el: '#app-two',
+    data: {
+        msg: '我是App-Two',
+    },
+    methods: {
+        greet(){
+            return '我是第二个Vue的实例';
+        },
+        changeMsg(){
+            return appOne.message = '我被第二Vue实例给改名了';
+        }
+    },
+    computed:{
+        say(){
+            return '我是第二个Vue的计算属性';
+        }
+    }
+
+})

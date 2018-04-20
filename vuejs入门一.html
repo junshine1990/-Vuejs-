@@ -47,8 +47,44 @@
         <!-- 数据的双向绑定 -->
         <input type="text" v-model="msg" >
         <span>绑定的数据: {{msg}}</span>
+
+
+        <!-- Vue中指令 v-if -->
+        <h1>v-if 条件</h1>
+        <button v-on:click="show = !show">显示</button>
+
+        <p v-if="show">江杨大道，你好</p>
+
+        <!-- Vue中指令 v-for -->
+        <h1>v-for</h1>
+        <!--  -->
+        <ul>
+            <li v-for="p in persons">{{p}}</li>
+        </ul>
+
+        <ul>
+            <li v-for="(user,key) in users">
+                {{key}}.{{user.name}}--{{user.age}}
+            </li>
+        </ul>
+ ///////////////
+    <!-- 先遍历循环每一个数组 -->
+        <template v-for="user in users">
+            <!-- 再循环遍历每一个对象 -->
+            <p v-for="(val,key) in user">
+                {{key}} - {{val}}
+
+            </p>
+        </template>
     </div>
   
+
+    <div id="app-two">
+        <h1>{{msg}}</h1>
+        <h2>{{say}}</h2>
+        <button v-on:click = "changeMsg()">我改第一个Vue 的message了</button>
+    </div>
+
     <script src="app.js"></script> 
 </body>
 </html>
